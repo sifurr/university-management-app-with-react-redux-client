@@ -16,7 +16,7 @@ type TSidebarItem = {
   children?: TSidebarItem[];
 };
 
-const adminPaths = [
+export const adminPaths = [
   {
     name: "Dashboard",
     path: "dashboard",
@@ -67,25 +67,25 @@ export const adminSidebarItems = adminPaths.reduce((acc: TSidebarItem[], item) =
 }, []);
 
 // programmatic way
-export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
-  if (item.path && item.element) {
-    acc.push({
-      path: item.path,
-      element: item.element,
-    });
-  }
+// export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
+//   if (item.path && item.element) {
+//     acc.push({
+//       path: item.path,
+//       element: item.element,
+//     });
+//   }
 
-  if (item.children) {
-    item.children.forEach((childItem) => {
-      acc.push({
-        path: childItem.path,
-        element: childItem.element,
-      });
-    });
-  }
+//   if (item.children) {
+//     item.children.forEach((childItem) => {
+//       acc.push({
+//         path: childItem.path,
+//         element: childItem.element,
+//       });
+//     });
+//   }
 
-  return acc;
-}, []);
+//   return acc;
+// }, []);
 
 // hard coded way
 
